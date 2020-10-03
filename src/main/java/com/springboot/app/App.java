@@ -1,4 +1,4 @@
-package com.example.spring-boot-app;
+package com.springboot.app;
 
 /**
  * Hello world!
