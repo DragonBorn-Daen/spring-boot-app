@@ -1,6 +1,7 @@
 package com.springboot.app.service;
 
 import com.springboot.app.entity.BaseEntity;
+import com.springboot.app.exception.ObjectNotFoundException;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.io.Serializable;
@@ -20,8 +21,7 @@ public abstract class CrudService<T extends BaseEntity, ID extends Serializable,
         if (byId.isPresent()) {
             return byId.get();
         } else {
-            //TODO need to customize exception
-            throw new RuntimeException("USER_NOT_FOUND");
+            throw new ObjectNotFoundException("USER_NOT_FOUND");
         }
     }
 
